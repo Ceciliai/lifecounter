@@ -30,6 +30,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var player2Minus5Button: UIButton!
     
     
+    @IBOutlet weak var player1AmountField: UITextField!
+    @IBOutlet weak var player2AmountField: UITextField!
+    
+    
+    @IBOutlet weak var player1AddCustomButton: UIButton!
+    
+    @IBOutlet weak var player1MinusCustomButton: UIButton!
+    
+    @IBOutlet weak var player2AddCustomButton: UIButton!
+    
+    @IBOutlet weak var player2MinusCustomButton: UIButton!
     
     @IBAction func player1Add1Tapped(_ sender: UIButton) {
         player1Life += 1
@@ -41,15 +52,24 @@ class ViewController: UIViewController {
         updateUI()
     }
     
-    @IBAction func player1Add5Tapped(_ sender: UIButton) {
-        player1Life += 5
-        updateUI()
+    @IBAction func player1AddCustomTapped(_ sender: UIButton) {
+    if let text = player1AmountField.text,
+           let amount = Int(text), amount > 0 {
+            player1Life += amount
+            updateUI()
+        }
     }
     
-    @IBAction func player1Minus5Tapped(_ sender: UIButton) {
-        player1Life = max(player1Life - 5, 0)
-        updateUI()
+    @IBAction func player1SubtractCustomTapped(_ sender: UIButton) {
+        if let text = player1AmountField.text,
+           let amount = Int(text), amount > 0 {
+            player1Life = max(player1Life - amount, 0)
+            updateUI()
+        }
     }
+    
+    
+
     
     @IBAction func player2Add1Tapped(_ sender: UIButton) {
         player2Life += 1
@@ -61,17 +81,22 @@ class ViewController: UIViewController {
         updateUI()
     }
     
-    @IBAction func player2Add5Tapped(_ sender: UIButton) {
-            player2Life += 5
+    @IBAction func player2AddCustomTapped(_ sender: UIButton) {
+        if let text = player2AmountField.text,
+           let amount = Int(text), amount > 0 {
+            player2Life += amount
             updateUI()
         }
-    
-    @IBAction func player2Minus5Tapped(_ sender: UIButton) {
-        player2Life = max(player2Life - 5, 0)
-        updateUI()
+    }
+
+    @IBAction func player2SubtractCustomTapped(_ sender: UIButton) {
+        if let text = player2AmountField.text,
+           let amount = Int(text), amount > 0 {
+            player2Life = max(player2Life - amount, 0)
+            updateUI()
+        }
     }
     
-    //@IBOutlet weak var loserLabel: UILabel!
     
     @IBOutlet weak var loserLabel: UILabel!
     
