@@ -16,171 +16,827 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-Yp-6Nx">
-                                <rect key="frame" x="155" y="110" width="85.333333333333314" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="27"/>
-                                <color key="textColor" red="0.86366382087628868" green="0.70116797530264341" blue="0.7614467963660928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kju-bo-1g4">
-                                <rect key="frame" x="162.66666666666666" y="156" width="70" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="mmA-ol-ExM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-4o-maa">
-                                <rect key="frame" x="130" y="151" width="34.333333333333314" height="34.333333333333343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="+"/>
-                                <connections>
-                                    <action selector="player1Add1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NcJ-W1-dbv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rN0-FK-63n">
-                                <rect key="frame" x="230" y="154" width="31.666666666666657" height="34.333333333333314"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="-"/>
-                                <connections>
-                                    <action selector="player1Minus1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNP-DQ-Jz3"/>
-                                </connections>
-                            </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" fixedFrame="YES" text="“ ”" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-Zm-bTI">
-                                <rect key="frame" x="185.66666666666666" y="260.66666666666669" width="23.666666666666657" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="23"/>
-                                <color key="textColor" systemColor="systemOrangeColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="VEG-fG-zEC">
-                                <rect key="frame" x="97" y="729" width="198" height="34.333333333333371"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HLJ-vN-1IL" userLabel="Bottom Stack View">
+                                <rect key="frame" x="21" y="743" width="350" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-KN-Vjj">
-                                        <rect key="frame" x="0.0" y="0.0" width="81" height="34.333333333333336"/>
-                                        <color key="tintColor" red="0.65570634664948457" green="0.44354728974558139" blue="0.60863207407014019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="+Player"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIv-ZC-twx">
-                                        <rect key="frame" x="119.66666666666669" y="0.0" width="78.333333333333314" height="34.333333333333336"/>
-                                        <color key="tintColor" red="0.47106055739812697" green="0.49175284394208302" blue="0.63605428479381443" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="-Player"/>
-                                    </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Player X LOSES!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-Zm-bTI">
+                                        <rect key="frame" x="45" y="-27" width="260" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="2L3-vJ-qUe"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="CVw-M8-07c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="23"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
+                                        <color key="highlightedColor" red="0.54087205400000005" green="0.73786076379999999" blue="0.92682828610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="VEG-fG-zEC" userLabel="PlayerAddMinus Stack View">
+                                        <rect key="frame" x="76" y="0.0" width="198" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-KN-Vjj">
+                                                <rect key="frame" x="0.0" y="18.000000000000004" width="81" height="34.333333333333343"/>
+                                                <color key="tintColor" red="0.65570634664948457" green="0.44354728974558139" blue="0.60863207407014019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="+Player"/>
+                                                <connections>
+                                                    <action selector="addPlayerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Um-Cj-2xG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIv-ZC-twx">
+                                                <rect key="frame" x="119.66666666666666" y="18.000000000000004" width="78.333333333333343" height="34.333333333333343"/>
+                                                <color key="tintColor" red="0.47106055739812697" green="0.49175284394208302" blue="0.63605428479381443" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="-Player"/>
+                                                <connections>
+                                                    <action selector="removePlayerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ec7-dX-fIb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="p4F-Zm-bTI" firstAttribute="centerX" secondItem="HLJ-vN-1IL" secondAttribute="centerX" id="6Ob-Ig-a38"/>
+                                    <constraint firstAttribute="trailing" secondItem="VEG-fG-zEC" secondAttribute="trailing" constant="76" id="B2P-No-CjH"/>
+                                    <constraint firstItem="VEG-fG-zEC" firstAttribute="leading" secondItem="HLJ-vN-1IL" secondAttribute="leading" constant="76" id="OpD-fZ-10D"/>
+                                    <constraint firstAttribute="height" constant="70" id="OsK-zi-YWt" userLabel="hight = 100"/>
+                                    <constraint firstItem="VEG-fG-zEC" firstAttribute="top" secondItem="p4F-Zm-bTI" secondAttribute="bottom" constant="2" id="dnX-PA-2DE"/>
+                                    <constraint firstAttribute="bottom" secondItem="VEG-fG-zEC" secondAttribute="bottom" id="mVO-kY-vZR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="utw-aC-p7x"/>
+                                </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jue-aW-bvV">
-                                <rect key="frame" x="152" y="345" width="88.666666666666686" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="27"/>
-                                <color key="textColor" red="0.17864613058315329" green="0.62965052440861513" blue="0.76859849691390991" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" fixedFrame="YES" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq2-M2-txD">
-                                <rect key="frame" x="181.33333333333331" y="391.66666666666669" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-Lu-hqm">
-                                <rect key="frame" x="130" y="386" width="34.333333333333343" height="34.333333333333314"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="+"/>
-                                <connections>
-                                    <action selector="player2Add1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2zt-l6-p8H"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9af-vD-MaN">
-                                <rect key="frame" x="227" y="389" width="31.666666666666657" height="34.333333333333314"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="-"/>
-                                <connections>
-                                    <action selector="player2Minus1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="opm-nN-x90"/>
-                                </connections>
-                            </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTo-qf-Ow0">
-                                <rect key="frame" x="242.66666666666669" y="421" width="0.0" height="50.333333333333314"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDU-0z-NlP">
-                                <rect key="frame" x="130" y="196" width="132.33333333333337" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Hw-yD-hWt">
-                                <rect key="frame" x="123" y="437" width="135" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyv-4L-Y8x">
-                                <rect key="frame" x="83" y="479" width="94" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="+Custom"/>
-                                <connections>
-                                    <action selector="player2AddCustomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VZB-Vb-BUc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9p-ML-IXO">
-                                <rect key="frame" x="212" y="479" width="91" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="-Custom"/>
-                                <connections>
-                                    <action selector="player2SubtractCustomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bi2-bp-xjt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJq-Fn-qV7">
-                                <rect key="frame" x="83" y="238" width="94" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="+Custom"/>
-                                <connections>
-                                    <action selector="player1AddCustomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IsT-OK-X6s"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Oa-tr-yf3">
-                                <rect key="frame" x="219" y="238" width="91" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="-Custom"/>
-                                <connections>
-                                    <action selector="player1SubtractCustomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fen-2q-WDH"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-lI-CjV">
+                                <rect key="frame" x="18" y="63" width="357" height="625"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="IOn-9h-vKt" userLabel="Stack View 1 to 8">
+                                        <rect key="frame" x="20" y="20" width="317" height="544.66666666666663"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="UBF-M3-2bK" userLabel="Stack View 1 and 2">
+                                                <rect key="frame" x="0.0" y="0.0" width="317" height="101.66666666666667"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="NeG-Fr-E6H" userLabel="Player1 all Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="101.66666666666667"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-Yp-6Nx">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="24.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
+                                                                <color key="textColor" red="0.86366382087628868" green="0.70116797530264341" blue="0.7614467963660928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aLN-EQ-URp" userLabel="Player 1.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="24.666666666666671" width="138" height="17"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-4o-maa" userLabel="Player1 plusOneButtons">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="17" id="XRB-qJ-rVi"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HXW-xA-HLS"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kju-bo-1g4" userLabel="Player1 Life Label">
+                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="70" id="mmA-ol-ExM"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rN0-FK-63n" userLabel="Player1 minusOneButtons">
+                                                                        <rect key="frame" x="106.33333333333333" y="0.0" width="31.666666666666671" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDC-Dc-DpH"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yDU-0z-NlP" userLabel="Custom Amount player1">
+                                                                <rect key="frame" x="0.0" y="41.666666666666671" width="138" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gUr-JA-DaN" userLabel="Player 1.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="75.666666666666657" width="138" height="26"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJq-Fn-qV7" userLabel="P1+Custom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="5NG-bI-90l"/>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="Tne-W0-523"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ews-Qn-wcE"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Oa-tr-yf3" userLabel="P1-Custom">
+                                                                        <rect key="frame" x="73" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="Ldu-zA-HEj"/>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="cca-XN-OuH"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L6Z-33-bNM"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fEd-YE-VJz" userLabel="Player2 all Stack View">
+                                                        <rect key="frame" x="179" y="0.0" width="138" height="101.66666666666667"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpq-QS-Fue">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="24.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
+                                                                <color key="textColor" red="0.86366382090000005" green="0.70116797529999997" blue="0.76144679640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-wJ-erH" userLabel="Player 2.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="24.666666666666671" width="138" height="17"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woj-QF-ix0" userLabel="Player2 plusOneButtons">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="17" id="KrN-8b-KYU"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYc-JH-tOx"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4c-Xz-YOm" userLabel="Player2 Life Label">
+                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="70" id="zC6-Z3-nZk"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-jo-SK7" userLabel="Player2 minusOneButtons">
+                                                                        <rect key="frame" x="106.33333333333331" y="0.0" width="31.666666666666657" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7a-Dw-9bn"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="r4Z-P2-4Hg" userLabel="Custom Amount player2">
+                                                                <rect key="frame" x="0.0" y="41.666666666666671" width="138" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0gl-zK-hJU" userLabel="Player 2.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="75.666666666666657" width="138" height="26"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu9-gi-iq4" userLabel="P2+Custom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="B7Q-XT-C6z"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="pJB-Iz-jrO"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zgP-y5-4Wd"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INF-ZY-Wu0" userLabel="P2-Custom">
+                                                                        <rect key="frame" x="73" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="Thc-ql-wZj"/>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="jzN-2T-y3U"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNd-u3-RXY"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="lg5-w2-oOZ" userLabel="Stack View 3 and 4">
+                                                <rect key="frame" x="0.0" y="147.66666666666666" width="317" height="101.66666666666666"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FN6-qM-ELw" userLabel="Player3 all Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="101.66666666666667"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeH-Aq-tuw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="24.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
+                                                                <color key="textColor" red="0.86366382090000005" green="0.70116797529999997" blue="0.76144679640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="c98-W1-74A" userLabel="Player 3.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="24.666666666666686" width="138" height="17"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0s-6r-J7V" userLabel="Player3 plusOneButtons">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="17" id="edi-aM-YXf"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d4O-dX-Sua"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIT-0V-Fg3" userLabel="Player3 Life Label">
+                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="70" id="91Q-ic-qlE"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMs-W4-EYV" userLabel="Player3 minusOneButtons">
+                                                                        <rect key="frame" x="106.33333333333333" y="0.0" width="31.666666666666671" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1xq-3x-oZo"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RtE-Tt-xL1" userLabel="Custom Amount player3">
+                                                                <rect key="frame" x="0.0" y="41.666666666666657" width="138" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t5J-oW-k6U" userLabel="Player 3.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="75.666666666666657" width="138" height="26"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMF-b5-dQs" userLabel="P3+Custom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="JTU-bv-iEQ"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="lqK-3K-T3Y"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="auL-uZ-wNk"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Em-1d-Sac" userLabel="P3-Custom">
+                                                                        <rect key="frame" x="73" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="Hs0-tM-ZAh"/>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="mcj-I4-Lf7"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5re-E8-fbq"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="32f-Iy-yd9" userLabel="Player4 all Stack View">
+                                                        <rect key="frame" x="179" y="0.0" width="138" height="101.66666666666667"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTA-J8-qKX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="24.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
+                                                                <color key="textColor" red="0.86366382090000005" green="0.70116797529999997" blue="0.76144679640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3zx-dd-DiI" userLabel="Player 4.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="24.666666666666686" width="138" height="17"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6B-YZ-d18" userLabel="Player4 plusOneButtons">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="17" id="gqf-1x-Hnb"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qob-uW-cdK"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1F-Vt-Lcd" userLabel="Player4 Life Label">
+                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="70" id="llu-QZ-TTu"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUc-Hs-v9g" userLabel="Player4 minusOneButtons">
+                                                                        <rect key="frame" x="106.33333333333331" y="0.0" width="31.666666666666657" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7iM-RH-QdI"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="T9J-zI-qrd" userLabel="Custom Amount player4">
+                                                                <rect key="frame" x="0.0" y="41.666666666666657" width="138" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CLU-Y1-WMD" userLabel="Player 4.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="75.666666666666657" width="138" height="26"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csF-PN-eid" userLabel="P4+Custom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="Han-Kp-GJh"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="c9u-An-0qz"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vgq-87-5Cc"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O33-9w-wIR" userLabel="P4-Custom">
+                                                                        <rect key="frame" x="73" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="2O0-dg-7Ax"/>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="ZLN-9F-6es"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Uv-LW-zWo"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="9bN-m7-EeE" userLabel="Stack View 5 and 6">
+                                                <rect key="frame" x="0.0" y="295.33333333333331" width="317" height="101.66666666666669"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EW2-CG-04K" userLabel="Player5 all Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="101.66666666666667"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObI-gx-0ii">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="24.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
+                                                                <color key="textColor" red="0.86366382090000005" green="0.70116797529999997" blue="0.76144679640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0s-vl-OfU" userLabel="Player 5.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="24.666666666666686" width="138" height="17"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaR-Hd-fKA" userLabel="Player5 plusOneButtons">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="17" id="Uge-d3-Zp1"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ol-46-gUs"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDk-Y8-Kme" userLabel="Player5 Life Label">
+                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="70" id="iEN-xb-TO8"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rz3-IC-JPh" userLabel="Player5 minusOneButtons">
+                                                                        <rect key="frame" x="106.33333333333333" y="0.0" width="31.666666666666671" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7bB-xv-Muw"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="o9I-ex-Iin" userLabel="Custom Amount player5">
+                                                                <rect key="frame" x="0.0" y="41.666666666666686" width="138" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xd3-be-Yna" userLabel="Player 5.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="75.666666666666686" width="138" height="26"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEh-2p-TOC" userLabel="P5+Custom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="6Tv-IW-W3I"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="YVf-zR-IfJ"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2on-kB-suZ"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEb-fS-hW6" userLabel="P5-Custom">
+                                                                        <rect key="frame" x="73" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="Ket-fz-Rxp"/>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="cvz-bj-Glz"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ozO-hJ-ISg"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Fgk-Ij-FgA" userLabel="Player6 all Stack View">
+                                                        <rect key="frame" x="179" y="0.0" width="138" height="101.66666666666667"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCU-zf-Urj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="24.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
+                                                                <color key="textColor" red="0.86366382090000005" green="0.70116797529999997" blue="0.76144679640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="452-qV-LTE" userLabel="Player 6.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="24.666666666666686" width="138" height="17"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-g3-32U" userLabel="Player6 plusOneButtons">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="17" id="iV2-Bw-gtF"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bkR-rR-zQE"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZs-aM-beq" userLabel="Player6 Life Label">
+                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="70" id="qhj-Rk-bNu"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQM-Ql-ppx" userLabel="Player6 minusOneButtons">
+                                                                        <rect key="frame" x="106.33333333333331" y="0.0" width="31.666666666666657" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fNv-Im-ldt"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="fru-EH-qjy" userLabel="Custom Amount player6">
+                                                                <rect key="frame" x="0.0" y="41.666666666666686" width="138" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ymM-da-2M1" userLabel="Player 6.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="75.666666666666686" width="138" height="26"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H96-al-EqG" userLabel="P6+Custom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="OEX-6E-dfI"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="ejc-nI-e86"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7mi-XO-CRA"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdC-HM-cPM" userLabel="P6-Custom">
+                                                                        <rect key="frame" x="73" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="b7q-9P-EU6"/>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="c4T-N7-Y0Z"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xFM-n7-Odj"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="46n-GJ-18n" userLabel="Stack View 7 and 8">
+                                                <rect key="frame" x="0.0" y="443" width="317" height="101.66666666666663"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Ox3-or-2b0" userLabel="Player7 all Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="101.66666666666667"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tn5-8F-seH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="24.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
+                                                                <color key="textColor" red="0.86366382090000005" green="0.70116797529999997" blue="0.76144679640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="gco-Gp-T2h" userLabel="Player 7.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="24.666666666666629" width="138" height="17"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIe-VO-ajl" userLabel="Player7 plusOneButtons">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="17" id="ATY-N3-lmJ"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DuN-K4-ovR"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfK-1z-WKa" userLabel="Player7 Life Label">
+                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="70" id="sOr-zw-BW2"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSI-SY-u1G" userLabel="Player7 minusOneButtons">
+                                                                        <rect key="frame" x="106.33333333333333" y="0.0" width="31.666666666666671" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHn-Yx-89L"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="wtK-Lg-Mid" userLabel="Custom Amount player7">
+                                                                <rect key="frame" x="0.0" y="41.666666666666629" width="138" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vUr-Du-Oxo" userLabel="Player 7.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="75.666666666666629" width="138" height="26"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHE-dz-ETh" userLabel="P7+Custom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="BME-Ok-QSD"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="DEV-Ab-lCz"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRa-GR-pXu"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-KN-vHP" userLabel="P7-Custom">
+                                                                        <rect key="frame" x="73" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="9YX-lP-lNt"/>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="UQf-7U-Krh"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OUJ-LQ-DBx"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FP9-R4-5Nt" userLabel="Player8 all Stack View">
+                                                        <rect key="frame" x="179" y="0.0" width="138" height="101.66666666666667"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g42-WP-f2b">
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="24.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
+                                                                <color key="textColor" red="0.86366382090000005" green="0.70116797529999997" blue="0.76144679640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="OBE-Bt-39O" userLabel="Player 8.1 Stack View">
+                                                                <rect key="frame" x="0.0" y="24.666666666666629" width="138" height="17"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQc-qE-skj" userLabel="Player8 plusOneButtons">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="17" id="oJI-yG-N79"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieV-JN-xTt"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJJ-o2-ZUN" userLabel="Player8 Life Label">
+                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="70" id="j90-4X-8kz"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="81" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlP-39-wnn" userLabel="Player8 minusOneButtons">
+                                                                        <rect key="frame" x="106.33333333333331" y="0.0" width="31.666666666666657" height="17"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-"/>
+                                                                        <connections>
+                                                                            <action selector="adjustLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZvT-Bt-4ub"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="asV-Sr-AR4" userLabel="Custom Amount player8">
+                                                                <rect key="frame" x="0.0" y="41.666666666666629" width="138" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vYS-A1-J8H" userLabel="Player 8.2 Stack View">
+                                                                <rect key="frame" x="0.0" y="75.666666666666629" width="138" height="26"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chR-SL-lXB" userLabel="P8+Custom">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="DHG-bz-GJx"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="KVr-ab-CcD"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="+Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PUd-8D-3cy"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="81" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfI-8J-WLh" userLabel="P8-Custom">
+                                                                        <rect key="frame" x="73" y="0.0" width="65" height="26"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="WcJ-Rk-Uv8"/>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="oSA-Dj-Oqh"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="tinted" title="-Custom">
+                                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="8"/>
+                                                                        </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="adjustCustomLifeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aG0-BY-nrF"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IOn-9h-vKt" firstAttribute="top" secondItem="M1e-lI-CjV" secondAttribute="top" constant="20" id="JUD-qI-bRp"/>
+                                    <constraint firstItem="IOn-9h-vKt" firstAttribute="top" secondItem="M1e-lI-CjV" secondAttribute="top" constant="20" id="R47-AV-l2T"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="FdC-Xt-bqX"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="lHS-fg-gs7"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.9356238410529516" green="0.93886760891098342" blue="0.90255389701935873" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="M1e-lI-CjV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="VQs-Vt-S3q"/>
+                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="top" secondItem="M1e-lI-CjV" secondAttribute="bottom" constant="55" id="fM0-pt-sfa"/>
+                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="625" id="flu-dB-7SA"/>
+                            <constraint firstItem="M1e-lI-CjV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="mG6-MR-1Ak"/>
+                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="mcr-s9-uk3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M1e-lI-CjV" secondAttribute="trailing" constant="18" id="oEm-JO-Fn6"/>
+                            <constraint firstAttribute="bottom" secondItem="HLJ-vN-1IL" secondAttribute="bottom" constant="39" id="qRr-tX-ZtE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HLJ-vN-1IL" secondAttribute="trailing" constant="22" id="x2j-UP-N00"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="loserLabel" destination="p4F-Zm-bTI" id="y3g-Ee-8Ii"/>
-                        <outlet property="player1" destination="2TV-Yp-6Nx" id="QAV-eb-pKj"/>
-                        <outlet property="player1Add1Button" destination="WVF-4o-maa" id="M5m-jQ-xIN"/>
-                        <outlet property="player1AddCustomButton" destination="eJq-Fn-qV7" id="bWL-uj-vyR"/>
-                        <outlet property="player1AmountField" destination="yDU-0z-NlP" id="Nac-i9-LJd"/>
-                        <outlet property="player1LifeLabel" destination="Kju-bo-1g4" id="zli-O4-krg"/>
-                        <outlet property="player1Minus1Button" destination="rN0-FK-63n" id="20b-NZ-FTc"/>
-                        <outlet property="player1MinusCustomButton" destination="4Oa-tr-yf3" id="hLY-Pd-uEx"/>
-                        <outlet property="player2" destination="jue-aW-bvV" id="BFb-O5-55t"/>
-                        <outlet property="player2Add1Button" destination="iBA-Lu-hqm" id="goJ-BB-Z2Z"/>
-                        <outlet property="player2AddCustomButton" destination="qyv-4L-Y8x" id="sdx-LT-Rak"/>
-                        <outlet property="player2AmountField" destination="1Hw-yD-hWt" id="uUt-Gf-WO1"/>
-                        <outlet property="player2LifeLabel" destination="gq2-M2-txD" id="M3E-LW-QQd"/>
-                        <outlet property="player2Minus1Button" destination="9af-vD-MaN" id="SKo-VI-hXe"/>
-                        <outlet property="player2MinusCustomButton" destination="B9p-ML-IXO" id="BNr-ct-Y8X"/>
+                        <outlet property="addPlayerButton" destination="Zz6-KN-Vjj" id="2xK-82-izl"/>
+                        <outlet property="loserLabel" destination="p4F-Zm-bTI" id="GFj-bL-YC3"/>
+                        <outlet property="removePlayerButton" destination="YIv-ZC-twx" id="NE7-PC-82o"/>
+                        <outletCollection property="playerLifeLabels" destination="Kju-bo-1g4" collectionClass="NSMutableArray" id="jtE-mc-Pt8"/>
+                        <outletCollection property="playerLifeLabels" destination="H4c-Xz-YOm" collectionClass="NSMutableArray" id="caN-Ij-9W2"/>
+                        <outletCollection property="playerLifeLabels" destination="HIT-0V-Fg3" collectionClass="NSMutableArray" id="Gkt-qa-Its"/>
+                        <outletCollection property="playerLifeLabels" destination="M1F-Vt-Lcd" collectionClass="NSMutableArray" id="J9n-Bj-hzI"/>
+                        <outletCollection property="playerLifeLabels" destination="ZDk-Y8-Kme" collectionClass="NSMutableArray" id="4fk-eY-zAE"/>
+                        <outletCollection property="playerLifeLabels" destination="ZZs-aM-beq" collectionClass="NSMutableArray" id="QQV-B0-BG4"/>
+                        <outletCollection property="playerLifeLabels" destination="tfK-1z-WKa" collectionClass="NSMutableArray" id="16a-Dm-PnH"/>
+                        <outletCollection property="playerLifeLabels" destination="vJJ-o2-ZUN" collectionClass="NSMutableArray" id="piG-XC-171"/>
+                        <outletCollection property="playerNameLabels" destination="2TV-Yp-6Nx" collectionClass="NSMutableArray" id="hVO-fs-yK3"/>
+                        <outletCollection property="playerNameLabels" destination="kpq-QS-Fue" collectionClass="NSMutableArray" id="g4H-Nh-dBw"/>
+                        <outletCollection property="playerNameLabels" destination="TeH-Aq-tuw" collectionClass="NSMutableArray" id="B1K-MW-tY9"/>
+                        <outletCollection property="playerNameLabels" destination="wTA-J8-qKX" collectionClass="NSMutableArray" id="8SF-2R-ebV"/>
+                        <outletCollection property="playerNameLabels" destination="ObI-gx-0ii" collectionClass="NSMutableArray" id="lWH-bb-9dR"/>
+                        <outletCollection property="playerNameLabels" destination="rCU-zf-Urj" collectionClass="NSMutableArray" id="QYh-a6-z2g"/>
+                        <outletCollection property="playerNameLabels" destination="Tn5-8F-seH" collectionClass="NSMutableArray" id="kkT-PC-ooX"/>
+                        <outletCollection property="playerNameLabels" destination="g42-WP-f2b" collectionClass="NSMutableArray" id="tYj-C9-COE"/>
+                        <outletCollection property="playerStackViews" destination="NeG-Fr-E6H" collectionClass="NSMutableArray" id="T7Y-ch-ut2"/>
+                        <outletCollection property="playerStackViews" destination="fEd-YE-VJz" collectionClass="NSMutableArray" id="cDd-rN-b31"/>
+                        <outletCollection property="playerStackViews" destination="FN6-qM-ELw" collectionClass="NSMutableArray" id="Nb8-vJ-VnS"/>
+                        <outletCollection property="playerStackViews" destination="32f-Iy-yd9" collectionClass="NSMutableArray" id="DVF-xy-czH"/>
+                        <outletCollection property="playerStackViews" destination="EW2-CG-04K" collectionClass="NSMutableArray" id="xkG-7J-yoF"/>
+                        <outletCollection property="playerStackViews" destination="Fgk-Ij-FgA" collectionClass="NSMutableArray" id="63D-66-r60"/>
+                        <outletCollection property="playerStackViews" destination="Ox3-or-2b0" collectionClass="NSMutableArray" id="4YB-Hf-Mpw"/>
+                        <outletCollection property="playerStackViews" destination="FP9-R4-5Nt" collectionClass="NSMutableArray" id="ZRm-LC-crG"/>
+                        <outletCollection property="plusOneButtons" destination="WVF-4o-maa" collectionClass="NSMutableArray" id="T0I-ex-SfM"/>
+                        <outletCollection property="plusOneButtons" destination="woj-QF-ix0" collectionClass="NSMutableArray" id="PZg-t1-zzn"/>
+                        <outletCollection property="plusOneButtons" destination="Z0s-6r-J7V" collectionClass="NSMutableArray" id="Yah-OR-N53"/>
+                        <outletCollection property="plusOneButtons" destination="i6B-YZ-d18" collectionClass="NSMutableArray" id="gWm-9k-lBF"/>
+                        <outletCollection property="plusOneButtons" destination="qaR-Hd-fKA" collectionClass="NSMutableArray" id="u9Z-hR-Cxv"/>
+                        <outletCollection property="plusOneButtons" destination="BgA-g3-32U" collectionClass="NSMutableArray" id="JYb-O6-9c5"/>
+                        <outletCollection property="plusOneButtons" destination="QIe-VO-ajl" collectionClass="NSMutableArray" id="AUs-im-PyY"/>
+                        <outletCollection property="plusOneButtons" destination="vQc-qE-skj" collectionClass="NSMutableArray" id="Bzg-aP-0cn"/>
+                        <outletCollection property="minusOneButtons" destination="rN0-FK-63n" collectionClass="NSMutableArray" id="Jpd-ak-bDX"/>
+                        <outletCollection property="minusOneButtons" destination="o5U-jo-SK7" collectionClass="NSMutableArray" id="3it-sw-sjH"/>
+                        <outletCollection property="minusOneButtons" destination="YMs-W4-EYV" collectionClass="NSMutableArray" id="NdA-Cz-JRe"/>
+                        <outletCollection property="minusOneButtons" destination="qUc-Hs-v9g" collectionClass="NSMutableArray" id="W1r-g0-adL"/>
+                        <outletCollection property="minusOneButtons" destination="Rz3-IC-JPh" collectionClass="NSMutableArray" id="BKf-QJ-AF4"/>
+                        <outletCollection property="minusOneButtons" destination="uQM-Ql-ppx" collectionClass="NSMutableArray" id="Y6b-Gv-J8Z"/>
+                        <outletCollection property="minusOneButtons" destination="NSI-SY-u1G" collectionClass="NSMutableArray" id="yNY-9n-vAr"/>
+                        <outletCollection property="minusOneButtons" destination="UlP-39-wnn" collectionClass="NSMutableArray" id="Hdl-fy-uNK"/>
+                        <outletCollection property="customAmountFields" destination="yDU-0z-NlP" collectionClass="NSMutableArray" id="s4M-T9-a3M"/>
+                        <outletCollection property="customAmountFields" destination="r4Z-P2-4Hg" collectionClass="NSMutableArray" id="IQQ-V9-WWm"/>
+                        <outletCollection property="customAmountFields" destination="RtE-Tt-xL1" collectionClass="NSMutableArray" id="dob-Fg-9vN"/>
+                        <outletCollection property="customAmountFields" destination="T9J-zI-qrd" collectionClass="NSMutableArray" id="rOn-7h-ym9"/>
+                        <outletCollection property="customAmountFields" destination="o9I-ex-Iin" collectionClass="NSMutableArray" id="ukq-ql-JdI"/>
+                        <outletCollection property="customAmountFields" destination="fru-EH-qjy" collectionClass="NSMutableArray" id="Aj4-es-wzv"/>
+                        <outletCollection property="customAmountFields" destination="wtK-Lg-Mid" collectionClass="NSMutableArray" id="SY0-rF-bW8"/>
+                        <outletCollection property="customAmountFields" destination="asV-Sr-AR4" collectionClass="NSMutableArray" id="DxM-Pq-5JS"/>
+                        <outletCollection property="minusCustomButtons" destination="4Oa-tr-yf3" collectionClass="NSMutableArray" id="Lo0-Rn-9YD"/>
+                        <outletCollection property="minusCustomButtons" destination="INF-ZY-Wu0" collectionClass="NSMutableArray" id="7Zv-VX-bq2"/>
+                        <outletCollection property="minusCustomButtons" destination="7Em-1d-Sac" collectionClass="NSMutableArray" id="eMD-mt-kQ1"/>
+                        <outletCollection property="minusCustomButtons" destination="O33-9w-wIR" collectionClass="NSMutableArray" id="17Y-zG-kbk"/>
+                        <outletCollection property="minusCustomButtons" destination="YEb-fS-hW6" collectionClass="NSMutableArray" id="XQD-A2-s1c"/>
+                        <outletCollection property="minusCustomButtons" destination="VdC-HM-cPM" collectionClass="NSMutableArray" id="6pQ-r4-KKr"/>
+                        <outletCollection property="minusCustomButtons" destination="zZc-KN-vHP" collectionClass="NSMutableArray" id="EnF-oo-vmm"/>
+                        <outletCollection property="minusCustomButtons" destination="jfI-8J-WLh" collectionClass="NSMutableArray" id="3NU-xH-4Sg"/>
+                        <outletCollection property="plusCustomButtons" destination="eJq-Fn-qV7" collectionClass="NSMutableArray" id="sd4-8n-gjX"/>
+                        <outletCollection property="plusCustomButtons" destination="cu9-gi-iq4" collectionClass="NSMutableArray" id="vRO-g7-Sfb"/>
+                        <outletCollection property="plusCustomButtons" destination="pMF-b5-dQs" collectionClass="NSMutableArray" id="n1K-f3-7zP"/>
+                        <outletCollection property="plusCustomButtons" destination="csF-PN-eid" collectionClass="NSMutableArray" id="2aM-CD-B2I"/>
+                        <outletCollection property="plusCustomButtons" destination="UEh-2p-TOC" collectionClass="NSMutableArray" id="kzJ-No-4hz"/>
+                        <outletCollection property="plusCustomButtons" destination="H96-al-EqG" collectionClass="NSMutableArray" id="zhH-3j-yII"/>
+                        <outletCollection property="plusCustomButtons" destination="SHE-dz-ETh" collectionClass="NSMutableArray" id="Nqm-7i-OP8"/>
+                        <outletCollection property="plusCustomButtons" destination="chR-SL-lXB" collectionClass="NSMutableArray" id="FZu-V1-Bhn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

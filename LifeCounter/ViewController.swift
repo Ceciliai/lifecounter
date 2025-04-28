@@ -9,130 +9,195 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var player1Life = 20
-    var player2Life = 20
+    var playerLives: [Int] = [20, 20, 20, 20, 20, 20, 20, 20] // 8个玩家
     var loser: Int? = nil
- 
-    @IBOutlet weak var player1LifeLabel: UILabel!
-    @IBOutlet weak var player2LifeLabel: UILabel!
+    var gameStarted = false // 记录游戏是否开始过
     
-    @IBOutlet weak var player1: UILabel!
-    @IBOutlet weak var player2: UILabel!
-    
-    @IBOutlet weak var player1Add1Button: UIButton!
-    @IBOutlet weak var player1Minus1Button: UIButton!
-    @IBOutlet weak var player1Add5Button: UIButton!
-    @IBOutlet weak var player1Minus5Button: UIButton!
-    
-    @IBOutlet weak var player2Add1Button: UIButton!
-    @IBOutlet weak var player2Minus1Button: UIButton!
-    @IBOutlet weak var player2Add5Button: UIButton!
-    @IBOutlet weak var player2Minus5Button: UIButton!
+    @IBOutlet var playerLifeLabels: [UILabel]! // 8个血量Label
+    @IBOutlet var playerNameLabels: [UILabel]! // 8个名字Label
+    @IBOutlet var customAmountFields: [UITextField]! // TextFields
+    @IBOutlet var plusOneButtons: [UIButton]! // +1 Buttons
+    @IBOutlet var minusOneButtons: [UIButton]! // -1 Buttons
+    @IBOutlet var plusCustomButtons: [UIButton]! // +Custom Buttons
+    @IBOutlet var minusCustomButtons: [UIButton]! // -Custom Buttons
+    @IBOutlet var playerStackViews: [UIStackView]! // 8个玩家总StackView（拆分每一个单独的在里面）
     
     
-    @IBOutlet weak var player1AmountField: UITextField!
-    @IBOutlet weak var player2AmountField: UITextField!
     
-    
-    @IBOutlet weak var player1AddCustomButton: UIButton!
-    
-    @IBOutlet weak var player1MinusCustomButton: UIButton!
-    
-    @IBOutlet weak var player2AddCustomButton: UIButton!
-    
-    @IBOutlet weak var player2MinusCustomButton: UIButton!
-    
-    @IBAction func player1Add1Tapped(_ sender: UIButton) {
-        player1Life += 1
-        updateUI()
-    }
-    
-    @IBAction func player1Minus1Tapped(_ sender: UIButton) {
-        player1Life = max(player1Life - 1, 0)
-        updateUI()
-    }
-    
-    @IBAction func player1AddCustomTapped(_ sender: UIButton) {
-    if let text = player1AmountField.text,
-           let amount = Int(text), amount > 0 {
-            player1Life += amount
-            updateUI()
-        }
-    }
-    
-    @IBAction func player1SubtractCustomTapped(_ sender: UIButton) {
-        if let text = player1AmountField.text,
-           let amount = Int(text), amount > 0 {
-            player1Life = max(player1Life - amount, 0)
-            updateUI()
-        }
-    }
-    
-    
-
-    
-    @IBAction func player2Add1Tapped(_ sender: UIButton) {
-        player2Life += 1
-        updateUI()
-    }
-    
-    @IBAction func player2Minus1Tapped(_ sender: UIButton) {
-        player2Life = max(player2Life - 1, 0)
-        updateUI()
-    }
-    
-    @IBAction func player2AddCustomTapped(_ sender: UIButton) {
-        if let text = player2AmountField.text,
-           let amount = Int(text), amount > 0 {
-            player2Life += amount
-            updateUI()
-        }
-    }
-
-    @IBAction func player2SubtractCustomTapped(_ sender: UIButton) {
-        if let text = player2AmountField.text,
-           let amount = Int(text), amount > 0 {
-            player2Life = max(player2Life - amount, 0)
-            updateUI()
-        }
-    }
-    
+    @IBOutlet weak var addPlayerButton: UIButton!
+    @IBOutlet weak var removePlayerButton: UIButton!
     
     @IBOutlet weak var loserLabel: UILabel!
     
+    var currentPlayerCount = 4 // 当前玩家人数
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
-        
+        setupInitialState()
+    }
+    
+    func setupInitialState() {
+        print("Setting up initial state...")
+        for i in 0..<8 {
+            if i < 4 {
+                playerLifeLabels[i].text = "20"
+                playerNameLabels[i].text = "Player \(i + 1)"
+                playerStackViews[i].isHidden = false
+                print("Player \(i+1) visible at start.")
+            } else {
+                playerStackViews[i].isHidden = true
+                print("Player \(i+1) hidden at start.")
+            }
+        }
+        loserLabel.isHidden = true
+        addPlayerButton.isEnabled = true
+        removePlayerButton.isEnabled = true
+        gameStarted = false
     }
     
     func updateUI() {
-        player1LifeLabel.text = "\(player1Life)"
-        player2LifeLabel.text = "\(player2Life)"
-
-    
+        print("Updating UI...")
+        for i in 0..<currentPlayerCount {
+            playerLifeLabels[i].text = "\(playerLives[i])"
+            print("Player \(i+1) life updated to \(playerLives[i]).")
+        }
+        
         if loser == nil {
-            if player1Life <= 0 {
-                loser = 0
-            } else if player2Life <= 0 {
-                loser = 1
+            for (index, life) in playerLives.enumerated() {
+                if life <= 0 {
+                    loser = index
+                    print("Player \(index+1) has lost (life <= 0).")
+                    break
+                }
             }
         }
-
+        
         if let currentLoser = loser {
-            if (currentLoser == 0 && player1Life <= 0) || (currentLoser == 1 && player2Life <= 0) {
-                loserLabel.text = currentLoser == 0 ? "Player 1 LOSES!" : "Player 2 LOSES!"
+            if playerLives[currentLoser] <= 0 {
+                loserLabel.text = "\(playerNameLabels[currentLoser].text ?? "Player \(currentLoser + 1)") LOSES!"
                 loserLabel.isHidden = false
+                print("Loser label shown: \(loserLabel.text ?? "")")
             } else {
                 loser = nil
                 loserLabel.text = ""
                 loserLabel.isHidden = true
+                print("Loser label hidden (revived?).")
             }
         } else {
             loserLabel.text = ""
             loserLabel.isHidden = true
+            print("No player has lost yet.")
         }
     }
+    
+    @IBAction func addPlayerTapped(_ sender: UIButton) {
+        print("Add Player button tapped.")
+        if currentPlayerCount < 8 {
+            playerStackViews[currentPlayerCount].isHidden = false
+            playerLifeLabels[currentPlayerCount].text = "\(playerLives[currentPlayerCount])"
+            playerNameLabels[currentPlayerCount].text = "Player \(currentPlayerCount + 1)"
+            print("Player \(currentPlayerCount + 1) added. Total players: \(currentPlayerCount + 1).")
+            currentPlayerCount += 1
+            updateUI()
+        }
+        if currentPlayerCount == 8 {
+            addPlayerButton.isEnabled = false
+            print("Add Player button disabled (max players reached).")
+        }
+        if currentPlayerCount > 2 {
+            removePlayerButton.isEnabled = true
+        }
+    }
+    
+    @IBAction func removePlayerTapped(_ sender: UIButton) {
+        print("Remove Player button tapped.")
+        if currentPlayerCount > 2 {
+            currentPlayerCount -= 1
+            playerStackViews[currentPlayerCount].isHidden = true
+            print("Player \(currentPlayerCount + 1) removed. Total players: \(currentPlayerCount).")
+            updateUI()
+        }
+        if currentPlayerCount == 2 {
+            removePlayerButton.isEnabled = false
+            print("Remove Player button disabled (minimum players reached).")
+        }
+        if currentPlayerCount < 8 && !gameStarted {
+            addPlayerButton.isEnabled = true
+        } else {
+            addPlayerButton.isEnabled = false
+        }
 
-}
+    }
+    
+    
+    @IBAction func adjustLifeTapped(_ sender: UIButton) {
+        print("\n====== adjustLifeTapped called ======")
+            print("Sender: \(sender)")
+            print("Sender tag: \(sender.tag)")
+            
+            let playerIndex = (sender.tag / 10) - 1
+            let isPlus = sender.tag % 10 == 0 // 修正了！！
+            
+            print("Calculated playerIndex: \(playerIndex)")
+            print("Is Plus: \(isPlus)")
+            
+            if playerLives.indices.contains(playerIndex) {
+                if isPlus {
+                    playerLives[playerIndex] += 1
+                    print("✅ Player \(playerIndex + 1) +1 life. New life: \(playerLives[playerIndex])")
+                } else {
+                    playerLives[playerIndex] = max(0, playerLives[playerIndex] - 1)
+                    print("✅ Player \(playerIndex + 1) -1 life. New life: \(playerLives[playerIndex])")
+                }
+                updateUI()
+                if !gameStarted {
+                    gameStarted = true
+                    addPlayerButton.isEnabled = false
+                    print("🚀 Game started! Add Player button disabled.")
+                }
+            } else {
+                print("❗ playerIndex \(playerIndex) out of bounds for playerLives array.")
+            }
+    }
+    
+    @IBAction func adjustCustomLifeTapped(_ sender: UIButton) {
+        print("\n====== adjustCustomLifeTapped called ======")
+           print("Sender: \(sender)")
+           print("Sender tag: \(sender.tag)")
 
+           let playerIndex = (sender.tag / 10) - 1
+           let isPlus = sender.tag % 10 == 0 // 修正了！！
+
+           print("Calculated playerIndex: \(playerIndex)")
+           print("Is Plus: \(isPlus)")
+
+           if playerLives.indices.contains(playerIndex) {
+               if customAmountFields.indices.contains(playerIndex) {
+                   let field = customAmountFields[playerIndex]
+                   print("Custom Amount Field for Player \(playerIndex+1): \(field)")
+                   if let text = field.text,
+                      let amount = Int(text), amount > 0 {
+                       if isPlus {
+                           playerLives[playerIndex] += amount
+                           print("✅ Player \(playerIndex + 1) +\(amount) custom life. New life: \(playerLives[playerIndex])")
+                       } else {
+                           playerLives[playerIndex] = max(0, playerLives[playerIndex] - amount)
+                           print("✅ Player \(playerIndex + 1) -\(amount) custom life. New life: \(playerLives[playerIndex])")
+                       }
+                       updateUI()
+                       if !gameStarted {
+                           gameStarted = true
+                           addPlayerButton.isEnabled = false
+                           print("🚀 Game started via custom adjust! Add Player button disabled.")
+                       }
+                   } else {
+                       print("❗ Invalid or empty custom amount entered for Player \(playerIndex+1). Field text: \(field.text ?? "nil")")
+                   }
+               } else {
+                   print("❗ customAmountFields index \(playerIndex) out of bounds!")
+               }
+           } else {
+               print("❗ playerIndex \(playerIndex) out of bounds for playerLives array.")
+           }
+       }
+   }
