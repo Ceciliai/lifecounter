@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HLJ-vN-1IL" userLabel="Bottom Stack View">
-                                <rect key="frame" x="21" y="743" width="350" height="70"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HLJ-vN-1IL" userLabel="Bottom Stack View">
+                                <rect key="frame" x="21" y="743" width="351" height="70"/>
                                 <subviews>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Player X LOSES!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-Zm-bTI">
-                                        <rect key="frame" x="45" y="-27" width="260" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Player X LOSES!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-Zm-bTI">
+                                        <rect key="frame" x="45.666666666666686" y="0.0" width="260" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="2L3-vJ-qUe"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="CVw-M8-07c"/>
@@ -29,25 +29,40 @@
                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                         <color key="highlightedColor" red="0.54087205400000005" green="0.73786076379999999" blue="0.92682828610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="VEG-fG-zEC" userLabel="PlayerAddMinus Stack View">
-                                        <rect key="frame" x="76" y="0.0" width="198" height="70"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="VEG-fG-zEC" userLabel="PlayerAddMinus Stack View">
+                                        <rect key="frame" x="76" y="36" width="199" height="34"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-KN-Vjj">
-                                                <rect key="frame" x="0.0" y="18.000000000000004" width="81" height="34.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="34"/>
                                                 <color key="tintColor" red="0.65570634664948457" green="0.44354728974558139" blue="0.60863207407014019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="+Player"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="+Player">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="10"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="addPlayerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Um-Cj-2xG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIv-ZC-twx">
-                                                <rect key="frame" x="119.66666666666666" y="18.000000000000004" width="78.333333333333343" height="34.333333333333343"/>
+                                                <rect key="frame" x="69.333333333333343" y="0.0" width="59.666666666666657" height="34"/>
                                                 <color key="tintColor" red="0.47106055739812697" green="0.49175284394208302" blue="0.63605428479381443" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="-Player"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="-Player">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="10"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="removePlayerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ec7-dX-fIb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsk-5C-lSE">
+                                                <rect key="frame" x="136" y="0.0" width="63" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="History">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="11"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="historyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J3A-CV-fbp"/>
+                                                    <segue destination="WLL-fW-oDI" kind="show" identifier="showHistory" id="Yga-DO-H1z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -57,16 +72,14 @@
                                     <constraint firstItem="p4F-Zm-bTI" firstAttribute="centerX" secondItem="HLJ-vN-1IL" secondAttribute="centerX" id="6Ob-Ig-a38"/>
                                     <constraint firstAttribute="trailing" secondItem="VEG-fG-zEC" secondAttribute="trailing" constant="76" id="B2P-No-CjH"/>
                                     <constraint firstItem="VEG-fG-zEC" firstAttribute="leading" secondItem="HLJ-vN-1IL" secondAttribute="leading" constant="76" id="OpD-fZ-10D"/>
-                                    <constraint firstAttribute="height" constant="70" id="OsK-zi-YWt" userLabel="hight = 100"/>
-                                    <constraint firstItem="VEG-fG-zEC" firstAttribute="top" secondItem="p4F-Zm-bTI" secondAttribute="bottom" constant="2" id="dnX-PA-2DE"/>
-                                    <constraint firstAttribute="bottom" secondItem="VEG-fG-zEC" secondAttribute="bottom" id="mVO-kY-vZR"/>
+                                    <constraint firstAttribute="height" constant="70" id="OsK-zi-YWt" userLabel="hight = 70"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="utw-aC-p7x"/>
                                 </constraints>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-lI-CjV">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-lI-CjV">
                                 <rect key="frame" x="18" y="63" width="357" height="625"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="IOn-9h-vKt" userLabel="Stack View 1 to 8">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="IOn-9h-vKt" userLabel="Stack View 1 to 8">
                                         <rect key="frame" x="20" y="20" width="317" height="544.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="UBF-M3-2bK" userLabel="Stack View 1 and 2">
@@ -96,16 +109,16 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kju-bo-1g4" userLabel="Player1 Life Label">
-                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <rect key="frame" x="35.333333333333329" y="0.0" width="70" height="17"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="70" id="mmA-ol-ExM"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="mmA-ol-ExM"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rN0-FK-63n" userLabel="Player1 minusOneButtons">
-                                                                        <rect key="frame" x="106.33333333333333" y="0.0" width="31.666666666666671" height="17"/>
+                                                                        <rect key="frame" x="106.33333333333334" y="0.0" width="31.666666666666657" height="17"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="tinted" title="-"/>
                                                                         <connections>
@@ -139,7 +152,7 @@
                                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Oa-tr-yf3" userLabel="P1-Custom">
                                                                         <rect key="frame" x="73" y="0.0" width="65" height="26"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="Ldu-zA-HEj"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Ldu-zA-HEj"/>
                                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="cca-XN-OuH"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
@@ -180,7 +193,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4c-Xz-YOm" userLabel="Player2 Life Label">
                                                                         <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="70" id="zC6-Z3-nZk"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zC6-Z3-nZk"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                                         <nil key="textColor"/>
@@ -222,7 +235,7 @@
                                                                         <rect key="frame" x="73" y="0.0" width="65" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="Thc-ql-wZj"/>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="jzN-2T-y3U"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="jzN-2T-y3U"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="tinted" title="-Custom">
@@ -251,7 +264,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="c98-W1-74A" userLabel="Player 3.1 Stack View">
-                                                                <rect key="frame" x="0.0" y="24.666666666666686" width="138" height="17"/>
+                                                                <rect key="frame" x="0.0" y="24.666666666666742" width="138" height="17"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0s-6r-J7V" userLabel="Player3 plusOneButtons">
                                                                         <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
@@ -265,16 +278,16 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIT-0V-Fg3" userLabel="Player3 Life Label">
-                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <rect key="frame" x="35.333333333333329" y="0.0" width="70" height="17"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="70" id="91Q-ic-qlE"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="91Q-ic-qlE"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMs-W4-EYV" userLabel="Player3 minusOneButtons">
-                                                                        <rect key="frame" x="106.33333333333333" y="0.0" width="31.666666666666671" height="17"/>
+                                                                        <rect key="frame" x="106.33333333333334" y="0.0" width="31.666666666666657" height="17"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="tinted" title="-"/>
                                                                         <connections>
@@ -284,12 +297,12 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RtE-Tt-xL1" userLabel="Custom Amount player3">
-                                                                <rect key="frame" x="0.0" y="41.666666666666657" width="138" height="34"/>
+                                                                <rect key="frame" x="0.0" y="41.666666666666742" width="138" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t5J-oW-k6U" userLabel="Player 3.2 Stack View">
-                                                                <rect key="frame" x="0.0" y="75.666666666666657" width="138" height="26"/>
+                                                                <rect key="frame" x="0.0" y="75.666666666666742" width="138" height="26"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMF-b5-dQs" userLabel="P3+Custom">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
@@ -308,7 +321,7 @@
                                                                     <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Em-1d-Sac" userLabel="P3-Custom">
                                                                         <rect key="frame" x="73" y="0.0" width="65" height="26"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="Hs0-tM-ZAh"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Hs0-tM-ZAh"/>
                                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="mcj-I4-Lf7"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
@@ -333,7 +346,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3zx-dd-DiI" userLabel="Player 4.1 Stack View">
-                                                                <rect key="frame" x="0.0" y="24.666666666666686" width="138" height="17"/>
+                                                                <rect key="frame" x="0.0" y="24.666666666666742" width="138" height="17"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6B-YZ-d18" userLabel="Player4 plusOneButtons">
                                                                         <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
@@ -349,7 +362,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1F-Vt-Lcd" userLabel="Player4 Life Label">
                                                                         <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="70" id="llu-QZ-TTu"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="llu-QZ-TTu"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                                         <nil key="textColor"/>
@@ -366,12 +379,12 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="T9J-zI-qrd" userLabel="Custom Amount player4">
-                                                                <rect key="frame" x="0.0" y="41.666666666666657" width="138" height="34"/>
+                                                                <rect key="frame" x="0.0" y="41.666666666666742" width="138" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CLU-Y1-WMD" userLabel="Player 4.2 Stack View">
-                                                                <rect key="frame" x="0.0" y="75.666666666666657" width="138" height="26"/>
+                                                                <rect key="frame" x="0.0" y="75.666666666666742" width="138" height="26"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csF-PN-eid" userLabel="P4+Custom">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
@@ -390,7 +403,7 @@
                                                                     <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O33-9w-wIR" userLabel="P4-Custom">
                                                                         <rect key="frame" x="73" y="0.0" width="65" height="26"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="2O0-dg-7Ax"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="2O0-dg-7Ax"/>
                                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="ZLN-9F-6es"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
@@ -420,7 +433,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0s-vl-OfU" userLabel="Player 5.1 Stack View">
-                                                                <rect key="frame" x="0.0" y="24.666666666666686" width="138" height="17"/>
+                                                                <rect key="frame" x="0.0" y="24.666666666666629" width="138" height="17"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaR-Hd-fKA" userLabel="Player5 plusOneButtons">
                                                                         <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
@@ -434,16 +447,16 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDk-Y8-Kme" userLabel="Player5 Life Label">
-                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <rect key="frame" x="35.333333333333329" y="0.0" width="70" height="17"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="70" id="iEN-xb-TO8"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="iEN-xb-TO8"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rz3-IC-JPh" userLabel="Player5 minusOneButtons">
-                                                                        <rect key="frame" x="106.33333333333333" y="0.0" width="31.666666666666671" height="17"/>
+                                                                        <rect key="frame" x="106.33333333333334" y="0.0" width="31.666666666666657" height="17"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="tinted" title="-"/>
                                                                         <connections>
@@ -453,12 +466,12 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="o9I-ex-Iin" userLabel="Custom Amount player5">
-                                                                <rect key="frame" x="0.0" y="41.666666666666686" width="138" height="34"/>
+                                                                <rect key="frame" x="0.0" y="41.666666666666629" width="138" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xd3-be-Yna" userLabel="Player 5.2 Stack View">
-                                                                <rect key="frame" x="0.0" y="75.666666666666686" width="138" height="26"/>
+                                                                <rect key="frame" x="0.0" y="75.666666666666629" width="138" height="26"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEh-2p-TOC" userLabel="P5+Custom">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
@@ -478,7 +491,7 @@
                                                                         <rect key="frame" x="73" y="0.0" width="65" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="Ket-fz-Rxp"/>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="cvz-bj-Glz"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="cvz-bj-Glz"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="tinted" title="-Custom">
@@ -502,7 +515,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="452-qV-LTE" userLabel="Player 6.1 Stack View">
-                                                                <rect key="frame" x="0.0" y="24.666666666666686" width="138" height="17"/>
+                                                                <rect key="frame" x="0.0" y="24.666666666666629" width="138" height="17"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-g3-32U" userLabel="Player6 plusOneButtons">
                                                                         <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
@@ -518,7 +531,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZs-aM-beq" userLabel="Player6 Life Label">
                                                                         <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="70" id="qhj-Rk-bNu"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="qhj-Rk-bNu"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                                         <nil key="textColor"/>
@@ -535,12 +548,12 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="fru-EH-qjy" userLabel="Custom Amount player6">
-                                                                <rect key="frame" x="0.0" y="41.666666666666686" width="138" height="34"/>
+                                                                <rect key="frame" x="0.0" y="41.666666666666629" width="138" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ymM-da-2M1" userLabel="Player 6.2 Stack View">
-                                                                <rect key="frame" x="0.0" y="75.666666666666686" width="138" height="26"/>
+                                                                <rect key="frame" x="0.0" y="75.666666666666629" width="138" height="26"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H96-al-EqG" userLabel="P6+Custom">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
@@ -560,7 +573,7 @@
                                                                         <rect key="frame" x="73" y="0.0" width="65" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="b7q-9P-EU6"/>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="c4T-N7-Y0Z"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="c4T-N7-Y0Z"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="tinted" title="-Custom">
@@ -589,7 +602,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="gco-Gp-T2h" userLabel="Player 7.1 Stack View">
-                                                                <rect key="frame" x="0.0" y="24.666666666666629" width="138" height="17"/>
+                                                                <rect key="frame" x="0.0" y="24.666666666666742" width="138" height="17"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIe-VO-ajl" userLabel="Player7 plusOneButtons">
                                                                         <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
@@ -603,16 +616,16 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfK-1z-WKa" userLabel="Player7 Life Label">
-                                                                        <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
+                                                                        <rect key="frame" x="35.333333333333329" y="0.0" width="70" height="17"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="70" id="sOr-zw-BW2"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="sOr-zw-BW2"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSI-SY-u1G" userLabel="Player7 minusOneButtons">
-                                                                        <rect key="frame" x="106.33333333333333" y="0.0" width="31.666666666666671" height="17"/>
+                                                                        <rect key="frame" x="106.33333333333334" y="0.0" width="31.666666666666657" height="17"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="tinted" title="-"/>
                                                                         <connections>
@@ -622,12 +635,12 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="wtK-Lg-Mid" userLabel="Custom Amount player7">
-                                                                <rect key="frame" x="0.0" y="41.666666666666629" width="138" height="34"/>
+                                                                <rect key="frame" x="0.0" y="41.666666666666742" width="138" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vUr-Du-Oxo" userLabel="Player 7.2 Stack View">
-                                                                <rect key="frame" x="0.0" y="75.666666666666629" width="138" height="26"/>
+                                                                <rect key="frame" x="0.0" y="75.666666666666742" width="138" height="26"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHE-dz-ETh" userLabel="P7+Custom">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
@@ -646,7 +659,7 @@
                                                                     <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-KN-vHP" userLabel="P7-Custom">
                                                                         <rect key="frame" x="73" y="0.0" width="65" height="26"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="9YX-lP-lNt"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="9YX-lP-lNt"/>
                                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="UQf-7U-Krh"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
@@ -671,7 +684,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="OBE-Bt-39O" userLabel="Player 8.1 Stack View">
-                                                                <rect key="frame" x="0.0" y="24.666666666666629" width="138" height="17"/>
+                                                                <rect key="frame" x="0.0" y="24.666666666666742" width="138" height="17"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQc-qE-skj" userLabel="Player8 plusOneButtons">
                                                                         <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="17"/>
@@ -687,7 +700,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="20" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJJ-o2-ZUN" userLabel="Player8 Life Label">
                                                                         <rect key="frame" x="35.333333333333343" y="0.0" width="70" height="17"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="70" id="j90-4X-8kz"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="j90-4X-8kz"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                                         <nil key="textColor"/>
@@ -704,12 +717,12 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom Amount" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="asV-Sr-AR4" userLabel="Custom Amount player8">
-                                                                <rect key="frame" x="0.0" y="41.666666666666629" width="138" height="34"/>
+                                                                <rect key="frame" x="0.0" y="41.666666666666742" width="138" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                             </textField>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vYS-A1-J8H" userLabel="Player 8.2 Stack View">
-                                                                <rect key="frame" x="0.0" y="75.666666666666629" width="138" height="26"/>
+                                                                <rect key="frame" x="0.0" y="75.666666666666742" width="138" height="26"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chR-SL-lXB" userLabel="P8+Custom">
                                                                         <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
@@ -728,7 +741,7 @@
                                                                     <button opaque="NO" tag="81" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfI-8J-WLh" userLabel="P8-Custom">
                                                                         <rect key="frame" x="73" y="0.0" width="65" height="26"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="WcJ-Rk-Uv8"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="WcJ-Rk-Uv8"/>
                                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="26" id="oSA-Dj-Oqh"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
@@ -749,8 +762,12 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="lHS-fg-gs7" firstAttribute="bottom" secondItem="IOn-9h-vKt" secondAttribute="bottom" constant="60.333333333333371" id="Dag-Sc-9Ma"/>
                                     <constraint firstItem="IOn-9h-vKt" firstAttribute="top" secondItem="M1e-lI-CjV" secondAttribute="top" constant="20" id="JUD-qI-bRp"/>
+                                    <constraint firstAttribute="trailing" secondItem="IOn-9h-vKt" secondAttribute="trailing" constant="20" id="N49-M0-ZiR"/>
+                                    <constraint firstAttribute="bottom" secondItem="IOn-9h-vKt" secondAttribute="bottom" constant="60.333333333333371" id="R1w-t3-ljk"/>
                                     <constraint firstItem="IOn-9h-vKt" firstAttribute="top" secondItem="M1e-lI-CjV" secondAttribute="top" constant="20" id="R47-AV-l2T"/>
+                                    <constraint firstItem="IOn-9h-vKt" firstAttribute="centerX" secondItem="M1e-lI-CjV" secondAttribute="centerX" id="hHv-cM-Eey"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="FdC-Xt-bqX"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="lHS-fg-gs7"/>
@@ -759,18 +776,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.9356238410529516" green="0.93886760891098342" blue="0.90255389701935873" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="M1e-lI-CjV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="VQs-Vt-S3q"/>
+                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="top" secondItem="M1e-lI-CjV" secondAttribute="bottom" constant="55" id="3QE-L5-gd3"/>
+                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKL-fq-fMs"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="HLJ-vN-1IL" secondAttribute="bottom" constant="-29" id="QJ4-EB-Y7d"/>
                             <constraint firstItem="HLJ-vN-1IL" firstAttribute="top" secondItem="M1e-lI-CjV" secondAttribute="bottom" constant="55" id="fM0-pt-sfa"/>
-                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="625" id="flu-dB-7SA"/>
-                            <constraint firstItem="M1e-lI-CjV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="mG6-MR-1Ak"/>
-                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="mcr-s9-uk3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M1e-lI-CjV" secondAttribute="trailing" constant="18" id="oEm-JO-Fn6"/>
-                            <constraint firstAttribute="bottom" secondItem="HLJ-vN-1IL" secondAttribute="bottom" constant="39" id="qRr-tX-ZtE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HLJ-vN-1IL" secondAttribute="trailing" constant="22" id="x2j-UP-N00"/>
+                            <constraint firstItem="M1e-lI-CjV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="kXr-u5-Gb0"/>
+                            <constraint firstAttribute="bottom" secondItem="HLJ-vN-1IL" secondAttribute="bottom" constant="39" id="m9D-bw-NQa"/>
+                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="centerX" secondItem="M1e-lI-CjV" secondAttribute="centerX" id="mER-FG-Vml"/>
+                            <constraint firstItem="HLJ-vN-1IL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="wH5-r0-lrT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addPlayerButton" destination="Zz6-KN-Vjj" id="2xK-82-izl"/>
+                        <outlet property="historyButton" destination="Vsk-5C-lSE" id="9HW-UV-5ff"/>
                         <outlet property="loserLabel" destination="p4F-Zm-bTI" id="GFj-bL-YC3"/>
                         <outlet property="removePlayerButton" destination="YIv-ZC-twx" id="NE7-PC-82o"/>
                         <outletCollection property="playerLifeLabels" destination="Kju-bo-1g4" collectionClass="NSMutableArray" id="jtE-mc-Pt8"/>
@@ -843,8 +861,46 @@
             </objects>
             <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
         </scene>
+        <!--History View Controller-->
+        <scene sceneID="c1t-nl-iGz">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" id="WLL-fW-oDI" customClass="HistoryViewController" customModule="LifeCounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gq8-1f-ltI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dgz-4b-DeH">
+                                <rect key="frame" x="20" y="79" width="353" height="684"/>
+                                <color key="backgroundColor" red="0.92419056060000004" green="0.90873360479999998" blue="0.84810592669999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TK1-Ec-LJ5"/>
+                        <color key="backgroundColor" red="0.92419056056701032" green="0.90873360482507604" blue="0.84810592665913476" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="TK1-Ec-LJ5" firstAttribute="trailing" secondItem="dgz-4b-DeH" secondAttribute="trailing" constant="20" id="3ZC-Nh-Ams"/>
+                            <constraint firstItem="dgz-4b-DeH" firstAttribute="top" secondItem="TK1-Ec-LJ5" secondAttribute="top" constant="20" id="CIl-tD-Kik"/>
+                            <constraint firstItem="dgz-4b-DeH" firstAttribute="leading" secondItem="TK1-Ec-LJ5" secondAttribute="leading" constant="20" id="X0U-D7-2S2"/>
+                            <constraint firstItem="TK1-Ec-LJ5" firstAttribute="bottom" secondItem="dgz-4b-DeH" secondAttribute="bottom" constant="20" id="ZWb-6r-qvK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BWx-mS-xuc"/>
+                    <connections>
+                        <outlet property="historyTextView" destination="dgz-4b-DeH" id="kzt-qK-rQm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vo6-e4-0Fh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788.54961832061065" y="3.5211267605633805"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

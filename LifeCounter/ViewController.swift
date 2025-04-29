@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var playerLives: [Int] = [20, 20, 20, 20, 20, 20, 20, 20] // 8个玩家
     var loser: Int? = nil
     var gameStarted = false // 记录游戏是否开始过
+    var history: [String] = []
+
     
     @IBOutlet var playerLifeLabels: [UILabel]! // 8个血量Label
     @IBOutlet var playerNameLabels: [UILabel]! // 8个名字Label
@@ -21,7 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet var plusCustomButtons: [UIButton]! // +Custom Buttons
     @IBOutlet var minusCustomButtons: [UIButton]! // -Custom Buttons
     @IBOutlet var playerStackViews: [UIStackView]! // 8个玩家总StackView（拆分每一个单独的在里面）
-    
+    @IBOutlet weak var historyButton: UIButton!
+
     
     
     @IBOutlet weak var addPlayerButton: UIButton!
@@ -52,6 +55,8 @@ class ViewController: UIViewController {
         loserLabel.isHidden = true
         addPlayerButton.isEnabled = true
         removePlayerButton.isEnabled = true
+        historyButton.isEnabled = true
+        historyButton.isHidden = false
         gameStarted = false
     }
     
@@ -76,6 +81,7 @@ class ViewController: UIViewController {
             if playerLives[currentLoser] <= 0 {
                 loserLabel.text = "\(playerNameLabels[currentLoser].text ?? "Player \(currentLoser + 1)") LOSES!"
                 loserLabel.isHidden = false
+                history.append("\(playerNameLabels[currentLoser].text ?? "Player \(currentLoser + 1)") lost the game.")
                 print("Loser label shown: \(loserLabel.text ?? "")")
             } else {
                 loser = nil
@@ -96,6 +102,7 @@ class ViewController: UIViewController {
             playerStackViews[currentPlayerCount].isHidden = false
             playerLifeLabels[currentPlayerCount].text = "\(playerLives[currentPlayerCount])"
             playerNameLabels[currentPlayerCount].text = "Player \(currentPlayerCount + 1)"
+            history.append("\(playerNameLabels[currentPlayerCount].text ?? "Player \(currentPlayerCount + 1)") joined the game.")
             print("Player \(currentPlayerCount + 1) added. Total players: \(currentPlayerCount + 1).")
             currentPlayerCount += 1
             updateUI()
@@ -107,6 +114,7 @@ class ViewController: UIViewController {
         if currentPlayerCount > 2 {
             removePlayerButton.isEnabled = true
         }
+        
     }
     
     @IBAction func removePlayerTapped(_ sender: UIButton) {
@@ -114,6 +122,7 @@ class ViewController: UIViewController {
         if currentPlayerCount > 2 {
             currentPlayerCount -= 1
             playerStackViews[currentPlayerCount].isHidden = true
+            history.append("\(playerNameLabels[currentPlayerCount].text ?? "Player \(currentPlayerCount + 1)") left the game.")
             print("Player \(currentPlayerCount + 1) removed. Total players: \(currentPlayerCount).")
             updateUI()
         }
@@ -132,32 +141,38 @@ class ViewController: UIViewController {
     
     @IBAction func adjustLifeTapped(_ sender: UIButton) {
         print("\n====== adjustLifeTapped called ======")
-            print("Sender: \(sender)")
-            print("Sender tag: \(sender.tag)")
+        print("Sender: \(sender)")
+        print("Sender tag: \(sender.tag)")
+        
+        let playerIndex = (sender.tag / 10) - 1
+        let isPlus = sender.tag % 10 == 0
+        
+        print("Calculated playerIndex: \(playerIndex)")
+        print("Is Plus: \(isPlus)")
+        
+        if playerLives.indices.contains(playerIndex) {
+            let playerName = playerNameLabels[playerIndex].text ?? "Player \(playerIndex + 1)"
             
-            let playerIndex = (sender.tag / 10) - 1
-            let isPlus = sender.tag % 10 == 0 // 修正了！！
-            
-            print("Calculated playerIndex: \(playerIndex)")
-            print("Is Plus: \(isPlus)")
-            
-            if playerLives.indices.contains(playerIndex) {
-                if isPlus {
-                    playerLives[playerIndex] += 1
-                    print("✅ Player \(playerIndex + 1) +1 life. New life: \(playerLives[playerIndex])")
-                } else {
-                    playerLives[playerIndex] = max(0, playerLives[playerIndex] - 1)
-                    print("✅ Player \(playerIndex + 1) -1 life. New life: \(playerLives[playerIndex])")
-                }
-                updateUI()
-                if !gameStarted {
-                    gameStarted = true
-                    addPlayerButton.isEnabled = false
-                    print("🚀 Game started! Add Player button disabled.")
-                }
+            if isPlus {
+                playerLives[playerIndex] += 1
+                history.append("\(playerName) gained 1 life.")
+                print("✅ \(playerName) +1 life. New life: \(playerLives[playerIndex])")
             } else {
-                print("❗ playerIndex \(playerIndex) out of bounds for playerLives array.")
+                playerLives[playerIndex] = max(0, playerLives[playerIndex] - 1)
+                history.append("\(playerName) lost 1 life.")
+                print("✅ \(playerName) -1 life. New life: \(playerLives[playerIndex])")
             }
+            
+            updateUI()
+            
+            if !gameStarted {
+                gameStarted = true
+                addPlayerButton.isEnabled = false
+                print("🚀 Game started! Add Player button disabled.")
+            }
+        } else {
+            print("❗ playerIndex \(playerIndex) out of bounds for playerLives array.")
+        }
     }
     
     @IBAction func adjustCustomLifeTapped(_ sender: UIButton) {
@@ -166,7 +181,7 @@ class ViewController: UIViewController {
            print("Sender tag: \(sender.tag)")
 
            let playerIndex = (sender.tag / 10) - 1
-           let isPlus = sender.tag % 10 == 0 // 修正了！！
+           let isPlus = sender.tag % 10 == 0
 
            print("Calculated playerIndex: \(playerIndex)")
            print("Is Plus: \(isPlus)")
@@ -177,14 +192,20 @@ class ViewController: UIViewController {
                    print("Custom Amount Field for Player \(playerIndex+1): \(field)")
                    if let text = field.text,
                       let amount = Int(text), amount > 0 {
+                       let playerName = playerNameLabels[playerIndex].text ?? "Player \(playerIndex + 1)"
+                       
                        if isPlus {
                            playerLives[playerIndex] += amount
-                           print("✅ Player \(playerIndex + 1) +\(amount) custom life. New life: \(playerLives[playerIndex])")
+                           history.append("\(playerName) gained \(amount) life.")
+                           print("✅ \(playerName) +\(amount) custom life. New life: \(playerLives[playerIndex])")
                        } else {
                            playerLives[playerIndex] = max(0, playerLives[playerIndex] - amount)
-                           print("✅ Player \(playerIndex + 1) -\(amount) custom life. New life: \(playerLives[playerIndex])")
+                           history.append("\(playerName) lost \(amount) life.")
+                           print("✅ \(playerName) -\(amount) custom life. New life: \(playerLives[playerIndex])")
                        }
+                       
                        updateUI()
+                       
                        if !gameStarted {
                            gameStarted = true
                            addPlayerButton.isEnabled = false
@@ -200,4 +221,18 @@ class ViewController: UIViewController {
                print("❗ playerIndex \(playerIndex) out of bounds for playerLives array.")
            }
        }
-   }
+    
+    @IBAction func historyButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "showHistory", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHistory" {
+            if let historyVC = segue.destination as? HistoryViewController {
+                // 把所有 history 的内容组合成一个长字符串
+                let combinedHistory = history.joined(separator: "\n")
+                historyVC.historyText = combinedHistory
+            }
+        }
+    }
+}
