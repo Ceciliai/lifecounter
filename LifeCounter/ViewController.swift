@@ -9,20 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var playerLives: [Int] = [20, 20, 20, 20, 20, 20, 20, 20] // 8个玩家
+    var playerLives: [Int] = [20, 20, 20, 20, 20, 20, 20, 20]
     var losers: Set<Int> = []
-    var gameStarted = false // 记录游戏是否开始过
+    var gameStarted = false
     var history: [String] = []
 
     
-    @IBOutlet var playerLifeLabels: [UILabel]! // 8个血量Label
-    @IBOutlet var playerNameLabels: [UILabel]! // 8个名字Label
+    @IBOutlet var playerLifeLabels: [UILabel]!
+    @IBOutlet var playerNameLabels: [UILabel]!
     @IBOutlet var customAmountFields: [UITextField]! // TextFields
     @IBOutlet var plusOneButtons: [UIButton]! // +1 Buttons
     @IBOutlet var minusOneButtons: [UIButton]! // -1 Buttons
     @IBOutlet var plusCustomButtons: [UIButton]! // +Custom Buttons
     @IBOutlet var minusCustomButtons: [UIButton]! // -Custom Buttons
-    @IBOutlet var playerStackViews: [UIStackView]! // 8个玩家总StackView（拆分每一个单独的在里面）
+    @IBOutlet var playerStackViews: [UIStackView]!
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
 
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loserLabel: UILabel!
     
-    var currentPlayerCount = 4 // 当前玩家人数
+    var currentPlayerCount = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
             label.isUserInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: #selector(nameLabelTapped(_:)))
             label.addGestureRecognizer(tap)
-            label.tag = index // 用 tag 记录是哪一位玩家
+            label.tag = index
         }
     }
     
@@ -71,33 +71,29 @@ class ViewController: UIViewController {
     func updateUI() {
         print("Updating UI...")
 
-        // 更新每位玩家生命显示
         for i in 0..<currentPlayerCount {
             playerLifeLabels[i].text = "\(playerLives[i])"
             print("Player \(i+1) life updated to \(playerLives[i]).")
         }
 
-        // 👇 遍历玩家，看是否有“新死亡”的玩家
         for i in 0..<currentPlayerCount {
             if playerLives[i] == 0 && !losers.contains(i) {
-                losers.insert(i) // ✅ 加入失败者集合
+                losers.insert(i)
                 let name = playerNameLabels[i].text ?? "Player \(i + 1)"
                 loserLabel.text = "\(name) LOSES!"
                 loserLabel.isHidden = false
                 history.append("\(name) lost the game.")
                 print("🟥 \(name) loses. Label updated and history recorded.")
-                break // ✅ 只显示最近失败者
+                break
             }
         }
-
-        // 如果所有玩家都还活着，隐藏失败信息
         if (0..<currentPlayerCount).allSatisfy({ playerLives[$0] > 0 }) {
             loserLabel.text = ""
             loserLabel.isHidden = true
             print("✅ All players alive. Loser label hidden.")
         }
 
-        // 👇 游戏结束：只剩一位玩家存活
+        
         let aliveCount = playerLives[0..<currentPlayerCount].filter { $0 > 0 }.count
         if aliveCount == 1 {
             let alert = UIAlertController(
@@ -108,7 +104,7 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                 self.history.append("Game reset after Game Over alert.")
                 print("🏁 Game Over confirmed. Resetting game.")
-                self.resetGame(clearHistory: true) // ✅ 自动 Reset 也清除历史
+                self.resetGame(clearHistory: true)
             }))
             present(alert, animated: true, completion: nil)
         }
@@ -253,7 +249,6 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showHistory" {
             if let historyVC = segue.destination as? HistoryViewController {
-                // 把所有 history 的内容组合成一个长字符串
                 let combinedHistory = history.joined(separator: "\n")
                 historyVC.historyText = combinedHistory
             }
@@ -262,14 +257,14 @@ class ViewController: UIViewController {
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         print("🔁 Manual reset triggered by user.")
-        resetGame(clearHistory: true) // ✅ 手动 Reset 也清除历史
+        resetGame(clearHistory: true)
     }
     
     /// Resets the game to its original state.
     /// - Parameter clearHistory: If true, clears the history log as part of the reset.
     func resetGame(clearHistory: Bool = false) {
         if clearHistory {
-            history.removeAll() // ✅ 清空历史记录（符合 user story 要求）
+            history.removeAll()
             print("🧹 History cleared as part of reset.")
         }
 
@@ -284,7 +279,7 @@ class ViewController: UIViewController {
             playerNameLabels[i].text = "Player \(i + 1)"
         }
 
-        losers.removeAll() // ✅ 清除失败玩家集合
+        losers.removeAll()
         loserLabel.text = ""
         loserLabel.isHidden = true
         gameStarted = false
