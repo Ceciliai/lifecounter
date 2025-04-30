@@ -20,5 +20,83 @@ repo should be called 'lifecounter'
 
 1 pt for each satisfied story
 
+-------------------------------------------------
+# Life Counter v2 – Homework Assignment
+
+## 📋 Description
+
+After presenting the LifeCounter app, the client has provided additional requirements. These updates will be implemented in a new branch called `v2` of the original `lifecounter` project.
+
+---
+
+## 📌 Stories (Required)
+
+### ✅ Story 1 (1 pt)
+> _"I often want to add/remove life in chunks other than 5 at a time."_  
+Change the `+5` / `-5` buttons into:
+- A numeric input field (accepts only numbers),
+- Paired with `+Custom` / `-Custom` buttons,
+- To allow for flexible life adjustments.
+
+---
+
+### ✅ Story 2 (2 pts)
+> _"When I launch the application, it should show me four 'players', but allow for a flexible number of players in total, from 2 to 8."_  
+Requirements:
+- App starts with **4 players**, each with 20 life.
+- An **"Add Player"** button allows adding more players (up to 8).
+- Once any player's life changes (game has started), disable the Add Player button until game is reset.
+
+---
+
+### ✅ Story 3 (2 pts)
+> _"I often want to look back at the history of the game."_  
+Create a **"History" screen** that:
+- Opens when user taps a **"History"** button,
+- Displays a list of all game actions, such as:  
+  - `"Player 1 lost one life."`  
+  - `"Player 3 lost four life."`
+
+---
+
+## 🌟 Bonus Features (1 pt each)
+
+### ⭐ Bonus 1
+> _"When all but one player has lost (life totals to less than zero), it should display 'Game over!' and an OK button."_  
+- On game over:
+  - Show a dialog with "Game over!" and an OK button,
+  - Pressing OK resets the app back to its original state (4 players, all at 20 life),
+  - History is also cleared.
+- Also add a **"Reset"** button on the main screen that does the same reset manually.
+
+---
+
+### ⭐ Bonus 2
+> _"I want to add names to the players."_  
+- Tapping on the player name label opens a **name-editing dialog**, allowing the user to enter a custom name for the player.
+
+---
+
+## 🛠️ Implementation Notes
+
+- All new functionality should be implemented in the `v2` branch.
+- Use UIKit and Storyboard as before.
+- Use `hidden` and `isHidden` techniques where appropriate to support showing/hiding player views.
+
+---
+
+## ✅ Grading Rubric (Total: 5 pts + bonus)
+
+| Feature | Points |
+|--------|--------|
+| Custom add/subtract amount input | 1 pt |
+| Dynamic players (2–8) and Add Player lock | 2 pts |
+| History screen and action log | 2 pts |
+| Bonus: Game over dialog and reset button | +1 pt |
+| Bonus: Editable player names | +1 pt |
+
+---
+
+
 
 
