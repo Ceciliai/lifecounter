@@ -38,7 +38,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialState()
+        for (index, label) in playerNameLabels.enumerated() {
+            label.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(nameLabelTapped(_:)))
+            label.addGestureRecognizer(tap)
+            label.tag = index // 用 tag 记录是哪一位玩家
+        }
     }
+    
     
     func setupInitialState() {
         print("Setting up initial state...")
@@ -287,5 +294,35 @@ class ViewController: UIViewController {
         updateUI()
         print("🔄 Game reset complete.")
     }
+    
+    @objc func nameLabelTapped(_ sender: UITapGestureRecognizer) {
+        guard let label = sender.view as? UILabel else { return }
+        let playerIndex = label.tag
+        let currentName = label.text ?? "Player \(playerIndex + 1)"
+
+        let alert = UIAlertController(
+            title: "Rename Player",
+            message: "Enter a new name for \(currentName):",
+            preferredStyle: .alert
+        )
+
+        alert.addTextField { textField in
+            textField.placeholder = "New name"
+            textField.text = currentName
+        }
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            if let newName = alert.textFields?.first?.text, !newName.isEmpty {
+                self?.playerNameLabels[playerIndex].text = newName
+                self?.history.append("\(currentName) changed name to \(newName).")
+                print("✏️ Player \(playerIndex + 1) renamed to \(newName)")
+            }
+        }))
+
+        present(alert, animated: true, completion: nil)
+    }
+
 
 }
